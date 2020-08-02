@@ -3,34 +3,15 @@
 This repository contains a collection of resources helpful for coding interviews which involve competitive programming. The content is currently supported in C++ only. Since vast amount of material is already present online, links to the same are given below. However, there is no concise and easy to understand documentation of STL available currently. You will find detailed STL syntax with examples in this repo.
 
 # Contents
-- [Introduction](#introduction)
-- [Contents](#contents)
-- [Basic Programming](#basic-programming)
-- [Time Complexity](#time-complexity)
-- [Standard Template Library](#standard-template-library)
-  - [STL Contents](#stl-contents)
-  - [Containers](#containers)
-    - [Vector](#vector)
-    - [Deque](#deque)
-    - [List](#list)
-    - [Stack](#stack)
-    - [Queue](#queue)
-    - [Priority Queue](#priority-queue)
-    - [Set](#set)
-    - [Multiset](#multiset)
-    - [Map](#map)
-    - [Multimap](#multimap)
-    - [Unordered Set](#unordered-set)
-    - [Unordered MultiSet](#unordered-multiset)
-    - [Unordered Map](#unordered-map)
-    - [Unordered Multimap](#unordered-multimap)
-  - [Algorithms](#algorithms)
-  - [Miscellaneous](#miscellaneous)
-- [Data Structures](#data-structures)
-- [Algorithms](#algorithms-1)
-- [Math and Miscellaneous](#math-and-miscellaneous)
-- [Practice](#practice)
-- [Acknowledgements](#acknowledgements)
+1. [Basic Programming](#basic-programming)
+2. [Time Complexity](#time-complexity)
+3. [Standard Template Library](#standard-template-library)
+4. [Data Structures](#data-structures)
+5. [Algorithms](#algorithms-1)
+6. [Math and Miscellaneous](#math-and-miscellaneous)
+7. [Practice](#practice)
+8. [Acknowledgements](#acknowledgements)
+
 
 # Basic Programming
 [Tutorial](https://www.tutorialspoint.com/cplusplus/index.htm) - Basic programming introduces the language syntax and related concepts.
