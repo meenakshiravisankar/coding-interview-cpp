@@ -20,7 +20,7 @@ This repository contains a collection of resources helpful for coding interviews
 [Tutorial](https://www.interviewbit.com/courses/programming/topics/time-complexity/) - Understanding computational complexity of your code is important. This is especially significant when choosing an efficient method if there are multiple ways to solve a particular problem.
 
 # Standard Template Library
-[Tutorial](#stl) - STL is the standard template library which contains C++ template classes. STL is a powerful tool and it reduces programming time with rich implementations of freuently used data structures and algorithms. Important parts of the STL are as follows:
+[Tutorial](#stl-contents) - STL is the standard template library which contains C++ template classes. STL is a powerful tool and it reduces programming time with rich implementations of freuently used data structures and algorithms. Important parts of the STL are as follows:
 
 1. Containers - includes container classes to store and manipulate data elements.
 2. Algorithms - includes important techniques like sorting, searching.
@@ -1103,7 +1103,7 @@ s = to_string(num_3); // s contains 19981998.26
 You can find detailed documentation on the [official website](http://www.cplusplus.com/reference/).
 
 # Data Structures
-[Tutorial](https://www.hackerearth.com/practice/algorithms/data-structures) - Different ways of storing, accessing and manipulating data according to the requirements. 
+[Tutorial](https://www.hackerearth.com/practice/data-structures) - Different ways of storing, accessing and manipulating data according to the requirements. 
 
 # Algorithms
 [Tutorial](https://www.hackerearth.com/practice/algorithms/) -  Efficient techniques and paradigms to solve various problems.
