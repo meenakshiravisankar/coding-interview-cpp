@@ -2,29 +2,34 @@
 STL is the standard template library which contains C++ template classes. STL is a powerful tool and it reduces programming time with rich implementations of freuently used data structures and algorithms. Important parts of the STL are as follows:
 1. Containers - includes container classes to store and manipulate data elements.
 2. Algorithms - includes important techniques like sorting, searching.
-
+3. Miscellaneous - includes string class and other functions.
+    
 > Learn STL, save your life
 
-**Table of contents**
-* Containers
-    1. [Vector](###Vector)
-    2. [Deque](###Deque)
-    3. [Stack](###Stack)
-    4. [Queue](###Queue)
-    5. [Priority Queue](###Priority%20Queue)
-    6. [Set](###Set)
-    7. [Multiset](###Multiset)
-    8. [Map](###Map)
-    9. [Multimap](###Multimap)
-    10. [Unordered Set](###Unordered%20Set)
-    11. [Unordered Multiset](###Unordered%20Multiset)
-    12. [Unordered Map](###Unordered%20Map)
-    13. [Unordered Multimap](###Unordered%20Multimap)
-   
-* Algorithms
+Usage of several STL classes are illustrated. For convenience and ease of learning, examples are also provided along with syntax.
+
+# Table of contents
+  - [Containers](#containers)
+    - [Vector](#vector)
+    - [Deque](#deque)
+    - [List](#list)
+    - [Stack](#stack)
+    - [Queue](#queue)
+    - [Priority Queue](#priority-queue)
+    - [Set](#set)
+    - [Multiset](#multiset)
+    - [Map](#map)
+    - [Multimap](#multimap)
+    - [Unordered Set](#unordered-set)
+    - [Unordered MultiSet](#unordered-multiset)
+    - [Unordered Map](#unordered-map)
+    - [Unordered Multimap](#unordered-multimap)
+  - [Algorithms](#algorithms)
+  - [Miscellaneous](#miscellaneous)
+
   
 ## Containers
-Following are the important containers illustrated with example use cases. Some methods support multiple ways of providing arguments which are also presented here.
+Following are the important containers provided with example use cases. Some methods support multiple ways of accepting arguments which are also presented. Templates accept both primitive and user-defined data types. For simiplicity, integer data type is used in the below examples.
 
 ### Vector
 A vector is similar to an array but with dynamic size where elements can be added from one end. 
@@ -916,3 +921,160 @@ mulmap_iter_pair = mulmap_1.equal_range(3); // mulmap_iter_pair.first->first out
 mulmap_1.swap(mulmap_2); // mulmap_1 contains {3,6}, {1,2}, {3,4} and mulmap_2 contains {3,6}, {3,4}
 ```
 
+
+
+## Algorithms
+```c++
+// comparison function
+bool comp(int a, int b)
+{
+    return a>b; // for descending order
+}
+
+// min(a,b), max(a,b) - returns minimum and maximum values respectively
+int min_num = min(3,5); // min_num contains 3
+int max_num = max(3,5); // max_num contains 5
+
+// min_element(start, end), max_element(start, end) - O(n) - returns iterator to the element
+vector<int> vec ({4,5,1});    // vec contains 4, 5, 1
+vector<int>::iterator vec_iter;
+vec_iter = min_element(vec.begin(), vec.end()); // *vec_iter contains 1
+vec_iter = max_element(vec.begin(), vec.end()); // *vec_iter outputs 5
+
+// distance(start, end) - O(n) - returns distance between two iterators
+int vec_dist = distance(vec.begin(), vec_iter); // vec_dist is 1
+
+// reverse(start, end) - O(n) - reverse the order of elements
+reverse(vec.begin(), vec.end()); // vec contains 1, 5, 4
+
+// next_permutation(start, end), prev_permutation(start, end) - O(n) - rearranges to lexicographically greater/lesser permutation
+next_permutation(vec.begin(), vec.end()); // vec contains 4, 1, 5
+prev_permutation(vec.begin(), vec.end()); // vec contains 1, 5, 4
+
+// random_shuffle(start, end) - O(n) - rearrange elements randomly
+random_shuffle(vec.begin(), vec.end());
+
+// sort(start, end) - O(nlog n)
+int arr_1[] = {4,5,1};
+int arr_2[] = {2,3,1};
+
+sort(arr_1, arr_1+3);       // arr_1 contains 1, 4, 5 - ascending by default
+sort(arr_2, arr_2+3, comp); // arr_2 contains 3, 2, 1 - descending using comp function
+
+// binary_search(start, end, value) - O(log n) - returns true if value found in sorted range
+int status;
+status = binary_search(arr_1, arr_1+3, 4);  // status contains 1 (ascending range by default)
+status = binary_search(arr_2, arr_2+3, 3, comp);  // status contains 1
+
+// merge(start_1, end_1, start_2, end_2, new_iter)
+vector<int> vec_1(6); // vec_1 contains 0, 0, 0, 0, 0, 0
+sort(arr_2, arr_2+3); // arr_2 contains 1, 2, 3
+merge(arr_1, arr_1+3, arr_2, arr_2+3, vec_1.begin()); // vec_1 contains 1, 1, 2, 3, 4, 5
+
+// find(start, end, value) - O(n) returns iterator to element otherwise end()
+vec_iter = find(vec_1.begin(), vec_1.end(), 4); // *vec_iter is 4
+vec_iter = find(vec_1.begin(), vec_1.end(), 6); // vec_iter is vec_1.end()
+```
+
+## Miscellaneous
+**Pair**
+
+```c++
+pair<int, int> mypair; // declaration
+pair<int, int> mypair_1 (3,5); // initialization
+mypair = make_pair(2,4); // assign
+int first, second;
+first = mypair.first; // first contains 2
+second = mypair.second; // second contains 4
+```
+
+**String**
+
+```c++
+// declaration and initialization
+string s;
+string s_1 = "random string";
+string s_2 (s_1.begin(), s_1.begin()+3); // s_2 contains ran
+string s_3 (5,'#'); // s_3 contains #####  
+string s_4 (s_1); // s_4 is a copy of s_1
+
+// length() - returns length of string
+int s_length = s_3.length(); // s_length contains 5
+
+// access
+char s_char = s_1[0]; // s_char contains r
+s_4[0] = 'f'; // s_4 contains fandom string
+
+// clear() - deletes the string
+s_4.clear(); // s_4 is empty
+
+// empty() - returns 1 if empty, 0 otherwise
+bool s_empty = s_4.empty(); // s_empty contains 1
+
+// concatenate
+s_2 += "d"; // s_2 contains rand
+
+// append() - concatenates string to the end
+s_4 = "om";
+// append(string)
+s_2.append(s_4); // s_2 contains random
+// append(start, end)
+s_2.append(s_3.begin(), s_3.begin()+1); // s_2 contains random#
+
+// assign() - replaces current string
+// assign(string)
+s.assign(s_3); // s contains #####
+// assign(start, end)
+s.assign(s_2.begin(), s_2.end()); // s contains random#
+
+// insert() - inserts string after position
+// insert(position, string)
+s.insert(0, s_3); // s contains #####random#
+// insert(position, start, end)
+s.insert(s.end(), s_3.begin(), s_3.end()-1); // s contains #####random#####
+
+// erase() - deletes character at the given position(s)
+// erase(position)
+s.erase(s.begin()); // s contains ####random#####
+// erase(start, end)
+s.erase(s.begin(), s.begin()+4); // s contains random#####
+
+// replace() - replaces from start to end with string
+// replace(start, end, string)
+s.replace(s.begin(), s.begin()+3, s_3); // s contains #####dom#####
+// replace(start, end, start_1, end_1)
+s.replace(s.begin()+1, s.end(), s_2.begin(), s_2.end()); // s contains #random#
+
+// find() - returns position of occurrence of string, -1 otherwise
+// find(string)
+int position;
+position = s.find("random"); // position contains 1
+position = s.find("fandom");   // position contains -1
+// find(string, position) - searches for occurrence from position. By default, position is 0 in the above case
+position = s.find("random", 2); // position contains -1
+
+// swap(string) - swaps contents of the strings
+s.swap(s_2); // s contains random#, s_2 contains #random#
+
+// relational operators
+bool status;
+status = (s_1==s_4); // status contains 0
+status = (s_1!=s_4); // status contains 1
+status = (s_1 < s_4); // status contains 0
+
+// conversions
+// stoi - convert string to integer
+int num = stoi("1998");
+
+// stoll - convert string to long long int
+long long int num_1 = stoll("19981998");
+
+// stof - convert string to float
+float num_2 = stof("1998.26");
+
+// stod - convert string to double
+double num_3 = stod("19981998.26");
+
+// to_string - convert to string
+s = to_string(num_3); // s contains 19981998.26
+```
