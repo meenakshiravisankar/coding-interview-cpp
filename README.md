@@ -38,6 +38,7 @@ Usage of several STL classes are illustrated. For convenience and ease of learni
     - [Stack](#stack)
     - [Queue](#queue)
     - [Priority Queue](#priority-queue)
+    - [Heap](#heap)
     - [Set](#set)
     - [Multiset](#multiset)
     - [Map](#map)
@@ -411,6 +412,35 @@ pq.swap(pq_1); // pq_1 is 5, pq is 5, 4, 3
 priority_queue<int, vector<int>, greater<int> > pq_2;
 pq_2.push(5);
 pq_2.push(3); // pq_2 is 3, 5
+```
+### Heap
+Heap is a specialized data structure which is almost a complete tree and satisfies heap property i.e.
+for a max heap value of all the parent nodes are higher than its children and for a min heap , values of 
+parent node is lesser than its children.
+By default it is designed as max-heap. If you want to convert it to min-heap, make all the values to be negative.
+
+```c++
+// Declaration and initialization
+vector<int> a={1,2,3,4,5};
+// Heapify - O(n)
+make_heap(a.begin(),a.end()); // By default max-heap formed
+
+// Print top of the heap
+cout<<a.front(); // Prints 5
+
+//Insert an element in the heap- O(log n)
+a.push_back(10);
+push_heap(a.begin(),a.end());
+cout<<a.front(); // Prints 10
+
+//Remove the top element - O(log n)
+int t= a.front(); // t=10
+pop_heap(a.begin(),a.end());
+a.pop_back();
+cout<<a.front(); // Prints 5
+
+// sort heap - O(nlog n)
+sort_heap(a.begin(),a.end()); // 1,2,3,4,5
 ```
 
 ### Set
